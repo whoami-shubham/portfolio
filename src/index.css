@@ -1,0 +1,268 @@
+@font-face {
+  font-family: 'google-font'; /*a name to be used later*/
+  src: url('../src/assets/google-font.woff2'); /*URL to font*/
+}
+body {
+  font-family: "google-font", "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    "sans-serif";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.container,nav{
+	font-family:"google-font";
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding:0.5rem; 
+  text-align: center;
+  background: #080808;
+} 
+
+.footer_link{
+  padding: .25rem 1rem;
+  /* opacity: 1; */
+  /* transition: all .5s ease-in-out; */
+}
+
+.fa-gmail{
+  width: 19px;
+  height: 16px;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+.gmail{
+  margin-bottom: 0.3rem !important;
+}
+
+.navbar-brand{
+  font-weight: 700;
+  letter-spacing:0.1em;
+}
+.nav-link {
+  padding: 0rem;
+  font-weight: 700;
+  color: white;
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+ .nav-link:hover,
+ .nav-link:focus{
+  border-bottom-color: white;
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.img_footer:hover,.img_hck:hover,.fa:hover{
+  transform: perspective(80px) translateZ(30px);
+}
+a,a:hover{
+  text-decoration: none;
+}
+.items_margin{
+  margin-top: 4rem;
+}
+
+ul{
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+}
+
+.position{
+  color: #7F8A90;
+  font-size: 1.1rem;
+  display: block;
+}
+hr{
+  border-top: 1px solid black;
+}
+.name{
+  margin-top: 1.5rem;
+  font-size: 1.75rem;
+  display: block;
+}
+
+.fa-stack-overflow,.fa-stack-overflow:hover{
+  color: #ef8236;
+}
+.fa-github,.fa-github:hover{
+  color: black;
+}
+.fa-facebook,.fa-facebook:hover{
+  color: #3b5998;
+}
+.fa-quora,.fa-quora:hover{
+  color:#AA2200;
+}
+.fa-linkedin,.fa-linkedin:hover{
+  color: #0077B5;
+}
+
+.bg_black{
+  background: #080808;
+}
+
+img{
+  width: 100%;
+}
+
+.img_item{
+  width: 100px;
+  height: 100px;
+}
+.img_hck{
+  width: 50px;
+  height: 50px;
+}
+.img_footer{
+  width: 40px;
+  height: 40px;
+}
+
+.profile{
+    width: 180px;
+    height: 180px;
+    margin-top: -8%;
+}
+.fa{
+  text-decoration: none !important;
+}
+.cover{
+  background-image: url('../src/assets/banner2.jpg');
+  min-height: 390px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bg-dark{
+  background-color: #080808 !important;
+}
+/* .right_item{
+  padding-left: 3.5rem;
+} */
+
+
+@media (max-width: 992px){
+  .nav-link {
+    border-bottom: none !important;
+  }
+  .profile{
+    width: 140px;
+    height: 140px;
+    margin-top: -9%;
+  }
+  .position{
+    font-size: 0.9rem;
+  }
+  .name{
+    font-size: 1.5rem;
+  }
+  .img_footer{
+    width: 35px;
+    height: 35px;
+  }
+  .img_hck{
+    width: 45px;
+    height: 45px;
+  }
+  footer{
+    margin-right: -1rem;
+  }
+}
+@media (max-width: 650px){
+  .navbar-brand{
+    font-size: 16px;
+  }
+  .header{
+    margin-right: -1rem;
+  }
+  .cover{
+    min-height: 150px;
+
+  }
+  .profile{
+    width: 95px;
+    height: 95px;
+    margin-top: -10%;
+  }
+  .position{
+    font-size: 0.7rem;
+  }
+  .name{
+    font-size: 1.1rem;
+  }
+  .img_footer{
+    width: 30px;
+    height: 30px;
+  }
+  .img_hck{
+    width: 40px;
+    height: 40px;
+  }
+  .paragraph{
+    font-size: 13px;
+  }
+  .img_item{
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 340px){
+  .cover{
+    min-height: 100px;
+
+  }
+  .profile{
+    width: 65px;
+    height: 65px;
+    margin-top: -12%;
+ }
+ .name {
+  font-size: 6vw;
+  }
+  .position{
+    font-size: 4vw;
+    }
+    .img_footer{
+      width: 4vw;
+      height: 4vw;
+    }
+    .img_hck{
+      width: 6vw;
+      height: 6vw;
+    }
+    .img_item{
+      width: 18vw;
+      height: 18vw;
+    }
+    .paragraph{
+      font-size: 4vw;
+    }
+    .right_item{
+      padding-left: 1rem;
+    }
+    .footer_link{
+      padding: .25rem 0.5rem;
+    }
+}
