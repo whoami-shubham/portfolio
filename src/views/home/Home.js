@@ -5,6 +5,8 @@ import Items from '../item/Items';
 import Articles from '../article/Articles';
 import Projects from '../project/Projects';
 import gmail from '../../assets/gmail.ico';
+import Experience from '../experience/Experience';
+import "./home.css"
 export default class Home extends Component {
    constructor(){
       super();
@@ -13,7 +15,8 @@ export default class Home extends Component {
         projects:[],
         articles:[],
         isloading:true,
-        bio:"Software Engineer"
+        bio:"Software Engineer",
+        exp:[]
       }
    }
    
@@ -26,7 +29,8 @@ export default class Home extends Component {
           projects:data.data.projects,
           articles:data.data.articles,
           isloading:false,
-          bio:data.data.bio
+          bio:data.data.bio,
+          exp:data.data.exp
         })
         console.log("%c shubham  ","color:green;background:black;font-size:5vw;border:1px solid red;");
      })
@@ -34,6 +38,8 @@ export default class Home extends Component {
    }
    
   render() {
+
+    const experiences = this.state.exp && this.state.exp.map((exp,i)=><Experience key={i} {...exp} />)
 
     return (
       
@@ -62,14 +68,17 @@ export default class Home extends Component {
                 </div>
           </div>
           <div className="container my-5">
-              <span className="name items_margin">Education</span>
-              <hr/>
+              <span className="name items_margin heading">Education</span>
+               <div className="row experiences">
+                  {experiences}
+               </div>
+              {/* <hr/> */}
               {this.state.educations.length!=0?<Items data={this.state.educations} />:<p>Loading...</p>}
-              <span className="name items_margin">Recent projects</span>
-              <hr/>
+              <span className="name items_margin heading">Recent Projects</span>
+              {/* <hr/> */}
               {this.state.projects.length!=0?<Projects data={this.state.projects} />:<p>Loading...</p>}
-              <span className="name items_margin">Articles from my Blog</span>
-              <hr/>
+              <span className="name items_margin heading">Recent Articles</span>
+              {/* <hr/> */}
               {this.state.articles.length!=0?<Articles data={this.state.articles} />:<p>Loading...</p>}
           </div>
           <div className="container items_margin">

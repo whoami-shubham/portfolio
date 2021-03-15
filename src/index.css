@@ -41,6 +41,10 @@ code {
   /* transition: all .5s ease-in-out; */
 }
 
+button{
+  outline: none!important;
+}
+
 .fa-gmail{
   width: 19px;
   height: 16px;
