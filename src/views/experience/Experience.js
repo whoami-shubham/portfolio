@@ -8,11 +8,11 @@ export default function Experience(props) {
         <div className="row exp-container" onClick={()=>setOpen(true)}>
             <div className="col">
                <div className="row">
-                   {props.duration}
+                   <p>{props.duration}</p>
                </div>
-               <div className="col">
-                   <span>{props.title}</span>
-                   <span>{props.org}</span>
+               <div className="col padding-left-0">
+                   <span className="row paragraph">{props.title}</span>
+                   <span className="row org">{props.org}</span>
                </div>
             </div>
             <div>

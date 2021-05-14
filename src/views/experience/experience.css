@@ -1,13 +1,19 @@
-.exp-img{
-   width: 60px;
-   height: 60px;
+.exp-img {
+  width: 60px;
+  height: 60px;
 }
-.exp-container{
-    padding: 16px;
-    margin: 16px;
-    width: 100%;
-    width: 300px;
-    height: 140px;
-    cursor: pointer;
-    border: 1px solid #ccc;
+.exp-container {
+  width: 300px;
+  height: 140px;
+  border: 1px solid #ccc;
+  padding: 16px;
+  cursor: pointer;
+  margin: 16px;
+}
+.padding-left-0 {
+  padding-left: 0;
+}
+.org {
+  color: #7f8a90;
+  font-size: small;
 }

@@ -1,3 +1,6 @@
-.experiences{
-    justify-content: space-around;
+.experiences {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 16px;
+  width: 100%;
 }

@@ -1,0 +1,19 @@
+.heading {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+}
+.content {
+  padding: 0px 16px 16px 16px;
+}
+.title {
+  padding-left: 16px;
+  margin-bottom: -16px;
+}
+.buttonsLink {
+  margin-left: 0 !important;
+}
+.description {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  margin-bottom: 0;
+}

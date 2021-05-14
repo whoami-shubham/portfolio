@@ -68,11 +68,11 @@ export default class Home extends Component {
                 </div>
           </div>
           <div className="container my-5">
-              <span className="name items_margin heading">Education</span>
+              <span className="name items_margin heading">Work Experience</span>
                <div className="row experiences">
                   {experiences}
                </div>
-              {/* <hr/> */}
+               <span className="name items_margin heading">Education</span>
               {this.state.educations.length!=0?<Items data={this.state.educations} />:<p>Loading...</p>}
               <span className="name items_margin heading">Recent Projects</span>
               {/* <hr/> */}

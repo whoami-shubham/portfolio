@@ -8,6 +8,7 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+import "./modal.css"
 
 const styles = (theme) => ({
   root: {
@@ -55,24 +56,28 @@ export default function Modal(props) {
     <div>
       <Dialog onClose={props.onClose} aria-labelledby="customized-dialog-title" open={props.open}>
         <DialogTitle id="customized-dialog-title" onClose={props.onClose}>
-            <p className="heading">{props.title}</p>
+            <p className="heading title">{props.title}</p>
         </DialogTitle>
-        <div className="col">
-          <div className="col heading">
-              <span>{props.duration}</span>
+        <DialogContent>
+        <div className="col content">
+          <div>
+              <span>{props.duration}</span><br/>
               <span>{props.location}</span>
+              <br/>
+              <br/>
           </div>
-          <p className="heading">Description</p>
+          <p className="description">Description</p>
           {props.description?
            <ul>
              {props.description.map((desc,i)=><li key={i}>{desc}</li>)}
            </ul>
            :null}
-           {props.urls &&props.urls.length?<div className="row">
+           {props.urls &&props.urls.length?<div className="row buttonsLink">
                {props.urls.map((url,i)=><a href={url.src} target="_blank"><button className="btn btn-primary">{url.label}</button></a>)}
            </div>:null
           }
         </div>
+        </DialogContent>
         <DialogActions>
           <Button onClick={props.onClose} color="secondary">
             close
