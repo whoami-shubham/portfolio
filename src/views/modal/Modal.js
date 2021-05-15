@@ -78,11 +78,6 @@ export default function Modal(props) {
           }
         </div>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={props.onClose} color="secondary">
-            close
-          </Button>
-        </DialogActions>
       </Dialog>
     </div>
   );

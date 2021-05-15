@@ -12,7 +12,7 @@ export default class Article extends Component {
                             <ul className="paragraph right_item">
                                 <li><b>{this.props.data.title}</b></li>
                                 <div dangerouslySetInnerHTML={{ __html: this.props.data.content }} />
-                                <li><a href={this.props.data.url} target='_blank'>[webpage]</a></li>
+                                <li><a href={this.props.data.url} target='_blank'><button className="btn github"><i className="devicon-github-original"></i> webpage</button></a></li>
                             </ul>
                         </div>
                   </div>

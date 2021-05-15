@@ -1,3 +1,35 @@
-ul{
-    list-style: none;
+ul {
+  list-style: none;
+}
+.img_item {
+  border-radius: 50%;
+  max-width: 100px;
+  border: 1px solid #ddd;
+}
+
+.btn {
+  height: 25px;
+  min-width: 64px;
+  padding: 1px 8px;
+  outline: none !important;
+}
+.github {
+  background-color: #424242;
+  color: white;
+}
+.github:hover,
+.npm:hover,
+.react:hover {
+  color: white;
+}
+.devicon-npm-original-wordmark {
+  font-size: 30;
+}
+.npm {
+  background-color: #cb3837;
+  color: white;
+}
+.react {
+  color: white;
+  background-color: #61dbfb;
 }
