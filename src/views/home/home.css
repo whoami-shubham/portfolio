@@ -4,3 +4,14 @@
   padding: 16px;
   width: 100%;
 }
+.message {
+  padding: 10px 16px;
+  color: white !important;
+  background: #01e675;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: "Inter";
+  border: none;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}

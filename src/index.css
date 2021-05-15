@@ -2,6 +2,10 @@
   font-family: "google-font"; /*a name to be used later*/
   src: url("../src/assets/google-font.woff2"); /*URL to font*/
 }
+@font-face {
+  font-family: "Inter"; /*a name to be used later*/
+  src: url("../src/assets/Inter-Bold.ttf"); /*URL to font*/
+}
 body {
   font-family: "google-font", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";
