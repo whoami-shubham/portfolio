@@ -81,7 +81,7 @@ export default class Home extends Component {
                             <a href="mailto:shubhamkumarjha0013@gmail.com" target="_blank" className="fa fa-gmail"><img src={gmail}  className="gmail" /></a>
                           </span>
                           <br/><br/>
-                          <button className="message" onClick={()=>window.location.href="https://bit.ly/33Kuopl"}><i class="fa fa-whatsapp"></i> Message</button>
+                          <button className="message" onClick={()=>window.location.href="https://bit.ly/3oiipc9"}><i class="fa fa-whatsapp"></i> Message</button>
                      </figcaption>
                    </center>
                 </div>
