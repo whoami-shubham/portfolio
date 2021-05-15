@@ -24,7 +24,16 @@ code {
 nav {
   font-family: "google-font";
 }
-
+.navbar {
+  padding: 0 1rem;
+}
+.header {
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  z-index: 1000;
+  border-bottom: 1px solid rgb(218, 220, 224);
+}
 .footer {
   position: relative;
   left: 0;
@@ -32,7 +41,7 @@ nav {
   width: 100%;
   padding: 0.5rem;
   text-align: center;
-  background: #080808;
+  /* background: #080808; */
 }
 
 .footer_link {
@@ -62,16 +71,22 @@ button {
 .nav-link {
   padding: 0rem;
   font-weight: 700;
-  color: white;
+  color: #333;
   background-color: transparent;
-  border-bottom: 0.25rem solid transparent;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.nav-item {
+  padding: 14px 24px;
 }
 
-.nav-link:hover,
-.nav-link:focus {
-  border-bottom-color: white;
-  color: #fff;
-  border-bottom-color: #fff;
+.nav-item:hover {
+  background: #eee;
+}
+
+.active {
+  border-bottom: 2px solid #4285fa;
+  color: #333;
 }
 
 .img_footer:hover,
@@ -88,7 +103,7 @@ a:hover {
 }
 
 ul {
-  margin-block-start: 1em;
+  /* margin-block-start: 1em; */
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
@@ -176,6 +191,16 @@ img {
 @media (max-width: 992px) {
   .nav-link {
     border-bottom: none !important;
+  }
+  .navbar-light {
+    padding-left: 0;
+  }
+  .nav-item,
+  .navbar-brand {
+    padding: 14px 16px;
+  }
+  .navbar {
+    min-height: 54px;
   }
   .profile {
     width: 140px;

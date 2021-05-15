@@ -73,7 +73,7 @@ export default function Modal(props) {
            </ul>
            :null}
            {props.urls &&props.urls.length?<div className="row buttonsLink">
-               {props.urls.map((url,i)=><a href={url.src} target="_blank"><button className="btn btn-primary">{url.label}</button></a>)}
+               {props.urls.map((url,i)=><a href={url.src} target="_blank" key={i}><button className="btn btn-primary">{url.label}</button></a>)}
            </div>:null
           }
         </div>

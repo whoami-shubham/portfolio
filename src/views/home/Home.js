@@ -31,6 +31,7 @@ export default class Home extends Component {
         bio:"Software Engineer",
         exp:[]
       }
+      this.myRef = React.createRef()
    }
    
    componentWillMount(){
@@ -49,7 +50,9 @@ export default class Home extends Component {
      })
      
    }
-   
+
+   scrollToProjects = ()=>this.myRef.current.scrollIntoView();
+
   render() {
     const {educations,projects,articles,bio,exp,isloading} = this.state;
     const expLoader = [...Array(3).keys()].map((key)=><Experience key={key} loading={true} />);
@@ -58,7 +61,7 @@ export default class Home extends Component {
     return (
       
      <div>
-          <Navbar />
+          <Navbar scroll={this.scrollToProjects}/>
           <div className="row">
                 <div className="col-12 cover">
                 </div>
@@ -88,7 +91,7 @@ export default class Home extends Component {
                </div>
                <span className="name items_margin heading">Education</span>
               {educations.length!=0 && !isloading ?<Items data={educations} />:<AvatarWithText />}
-              <span className="name items_margin heading">Recent Projects</span>
+              <span className="name items_margin heading" ref={this.myRef}>Recent Projects</span>
               {/* <hr/> */}
               {projects.length!=0 && !isloading?<Projects data={projects} />:<AvatarWithText />}
               <span className="name items_margin heading">Recent Articles</span>

@@ -1,0 +1,13 @@
+.resume-container {
+  padding-top: 130px;
+  margin-bottom: -185px;
+}
+.download-btn {
+  background: #1976d2;
+  color: white;
+  position: absolute;
+  top: 80px;
+}
+.download-btn:hover {
+  color: white;
+}

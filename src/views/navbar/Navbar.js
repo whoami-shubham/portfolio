@@ -1,26 +1,42 @@
 import React, { Component } from 'react'
 export default class Navbar extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            active:""
+        }
+    }
+    componentDidMount(){
+        this.setState({active:this.props.curTab?this.props.curTab:""})
+    }
   render() {
+    const clickHandler = (id)=>this.setState({active:id});
+      const clickProjectsHandler = ()=>{
+                  this.props.scroll();
+                  clickHandler("1")
+      }
+      
+      const {active} = this.state;
     return (
       <div className="header">
-         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+         <nav className="navbar navbar-expand-lg navbar-light">
                 <a className="navbar-brand" href="#">Shubham</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarText">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <a className="nav-link" href="#">About <span className="sr-only">(current)</span></a>
-                        </li>
-                        <li className="nav-item">
+                        </li> */}
+                        <li className={`nav-item ${active==="0"?"active":""}`} onClick={()=>clickHandler("0")} >
                             <a className="nav-link" href="http://whoami-shubham.github.io" target='_blank'>Blog</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="https://github.com/whoami-shubham" target='_blank'>Projects</a>
+                        <li className={`nav-item ${active==="1"?"active":""}`} onClick={clickProjectsHandler} >
+                            <span className="nav-link">Projects</span>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="https://drive.google.com/file/d/14PvyvmmcGn8K1NP_t0dHVpwtt1q2O96n/view?usp=sharing" target='_blank'>Resume</a>
+                        <li className={`nav-item ${active==="2"?"active":""}`} onClick={()=>clickHandler("2")}>
+                            <a className="nav-link" href="#/resume">Resume</a>
                         </li>
                     </ul>
                 </div>
