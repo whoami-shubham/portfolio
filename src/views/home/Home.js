@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ContentLoader from 'react-content-loader'
+import { withRouter } from "react-router";
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 import Items from '../item/Items';
@@ -20,48 +21,25 @@ const AvatarWithText = props => (
   </ContentLoader>
 )
 
-export default class Home extends Component {
-   constructor(){
-      super();
-      this.state = {
-        educations:[],
-        projects:[],
-        articles:[],
-        isloading:true,
-        bio:"Software Engineer",
-        exp:[]
-      }
-      this.myRef = React.createRef()
-   }
-   
-   componentWillMount(){
-     fetch('https://raw.githubusercontent.com/whoamishubham/whoamishubham.github.io/data/data.json')
-     .then((data)=>data.json())
-     .then((data)=>{
-        this.setState({
-          educations:data.data.educations,
-          projects:data.data.projects,
-          articles:data.data.articles,
-          bio:data.data.bio,
-          exp:data.data.exp
-        })
-        setTimeout(()=>this.setState({isloading:false}),2000)
-        console.log("%c shubham  ","color:green;background:black;font-size:5vw;border:1px solid red;");
-     })
-     
-   }
+function Home(props) {
+      const { educations,projects, articles,bio,exp,isloading } = props;
+      const projectRef =  React.createRef();
+      const articleRef =  React.createRef();
 
-   scrollToProjects = ()=>this.myRef.current.scrollIntoView();
+   const scrollToProjects = ()=>{
+     projectRef.current.scrollIntoView();
+   };
+   const scrollToArticles = ()=>{
+    articleRef.current.scrollIntoView();
+  };
 
-  render() {
-    const {educations,projects,articles,bio,exp,isloading} = this.state;
     const expLoader = [...Array(3).keys()].map((key)=><Experience key={key} loading={true} />);
     const experiences = isloading?expLoader: exp && exp.map((expr,i)=><Experience key={i} {...expr} loading={false} />)
     
     return (
       
      <div>
-          <Navbar scroll={this.scrollToProjects}/>
+          <Navbar scrollToProjects={scrollToProjects}  scrollToArticles={scrollToArticles}/>
           <div className="row">
                 <div className="col-12 cover">
                 </div>
@@ -81,7 +59,7 @@ export default class Home extends Component {
                             <a href="mailto:shubhamkumarjha0013@gmail.com" target="_blank" className="fa fa-gmail"><img src={gmail}  className="gmail" /></a>
                           </span>
                           <br/><br/>
-                          <button className="message" onClick={()=>window.location.href="https://bit.ly/3oiipc9"}><i class="fa fa-whatsapp"></i> Message</button>
+                          <button className="message" onClick={()=>window.location.href="https://bit.ly/3oiipc9"}><i className="fa fa-whatsapp"></i> Message</button>
                      </figcaption>
                    </center>
                 </div>
@@ -92,18 +70,18 @@ export default class Home extends Component {
                   {experiences}
                </div>
                <span className="name items_margin heading">Education</span>
-              {educations.length!=0 && !isloading ?<Items data={educations} />:<AvatarWithText />}
-              <span className="name items_margin heading" ref={this.myRef}>Recent Projects</span>
+              {educations.length!==0 && !isloading ?<Items data={educations} />:<AvatarWithText />}
+              <span className="name items_margin heading" ref={projectRef}>Recent Projects</span>
               {/* <hr/> */}
-              {projects.length!=0 && !isloading?<Projects data={projects} />:<AvatarWithText />}
-              <span className="name items_margin heading">Recent Articles</span>
+              {projects.length!==0 && !isloading?<Projects data={projects} />:<AvatarWithText />}
+              <span className="name items_margin heading" ref={articleRef}>Recent Articles</span>
               {/* <hr/> */}
-              {articles.length!=0 && !isloading?<Articles data={articles} />:<AvatarWithText />}
+              {articles.length!==0 && !isloading?<Articles data={articles} />:<AvatarWithText />}
           </div>
           <div className="container items_margin">
           </div>
           <Footer />
     </div>
     )
-  }
 }
+export default withRouter(Home);

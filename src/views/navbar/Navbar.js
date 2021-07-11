@@ -1,52 +1,103 @@
-import React, { Component } from 'react'
-export default class Navbar extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            active:""
-        }
+import React, {useState,useEffect,useContext } from "react";
+import { withRouter } from "react-router";
+import scrollContext from "../contexts/ScrollContext";
+
+function Navbar(props) {
+  
+  const [curNav,setcurNav] = useContext(scrollContext);
+ console.log(curNav)
+  function scroll(id){
+    switch (id) {
+      case "0":
+            props.scrollToArticles && props.scrollToArticles()
+            break;
+      case "1":
+        props.scrollToProjects && props.scrollToProjects();
+        break;
+        case "2":
+          props.scroll && props.scroll();
+          break;
+      default:
+        props.scroll && props.scroll();
+        break;
     }
-    componentDidMount(){
-        this.setState({active:this.props.curTab?this.props.curTab:""})
+  }
+
+
+  useEffect(()=>{
+     if(curNav && curNav!=="2"){
+       scroll(curNav);
+     }
+  },[curNav])
+
+  const clickHandler = (id, href) => {
+    if(id!=="2" && curNav==="2"){
+      props.history.push("/");
     }
-  render() {
-    const clickHandler = (id,href)=>{
-        this.setState({active:id})
-        if(href){
-            window.location.href=href;
-        }
+    setcurNav(id);
+    if (href) {
+      setTimeout(()=>props.history.push(href),0);
     }
-      const clickProjectsHandler = ()=>{
-                  this.props.scroll();
-                  clickHandler("1")
-      }
-      
-      const {active} = this.state;
-    return (
-      <div className="header">
-         <nav className="navbar navbar-expand-lg navbar-light">
-                <a className="navbar-brand" href="#">Shubham</a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarText">
-                    <ul className="navbar-nav ml-auto">
-                        {/* <li className="nav-item">
+  };
+
+  return (
+    <div className="header">
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <a className="navbar-brand" href="#" onClick={()=>clickHandler("")}>
+          Shubham
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarText">
+          <ul className="navbar-nav ml-auto">
+            {/* <li className="nav-item">
                             <a className="nav-link" href="#">About <span className="sr-only">(current)</span></a>
                         </li> */}
-                        <li className={`nav-item ${active==="0"?"active":""}`} onClick={()=>clickHandler("0","http://whoami-shubham.github.io")} >
-                            <a className="nav-link" href="http://whoami-shubham.github.io" target='_blank'>Blog</a>
-                        </li>
-                        <li className={`nav-item ${active==="1"?"active":""}`} onClick={clickProjectsHandler} >
-                            <span className="nav-link">Projects</span>
-                        </li>
-                        <li className={`nav-item ${active==="2"?"active":""}`} onClick={()=>clickHandler("2","#/resume")}>
-                            <a className="nav-link" href="#/resume">Resume</a>
-                        </li>
-                    </ul>
-                </div>
-         </nav>
-      </div>
-    )
-  }
+            <li
+              className={`nav-item ${curNav === "0" ? "active" : ""}`}
+              onClick={() =>
+                clickHandler("0")
+              }
+            >
+              <span className="nav-link">
+                Blog
+              </span>
+            </li>
+            <li
+              className={`nav-item ${curNav === "1" ? "active" : ""}`}
+              onClick={()=>clickHandler("1")}
+            >
+              <span className="nav-link">Projects</span>
+            </li>
+            <li
+              className={`nav-item ${curNav === "2" ? "active" : ""}`}
+              onClick={() => clickHandler("2", "resume")}
+            >
+              <span className="nav-link">
+                Resume
+              </span>
+            </li>
+            <li
+              className={`nav-item ${curNav === "3" ? "active" : ""}`}
+              //onClick={() => clickHandler("2", "resume")}
+            >
+              <span className="nav-link">
+                About
+              </span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  );
 }
+export default withRouter(Navbar);
