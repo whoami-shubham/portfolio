@@ -8,7 +8,7 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
-import "./modal.css"
+import style from "../../../styles/Modal.module.css"
 
 const styles = (theme) => ({
   root: {
@@ -56,23 +56,23 @@ export default function Modal(props) {
     <div>
       <Dialog onClose={props.onClose} aria-labelledby="customized-dialog-title" open={props.open}>
         <DialogTitle id="customized-dialog-title" onClose={props.onClose}>
-            <p className="heading title">{props.title}</p>
+            <p className={`${style.heading} ${style.title}`}>{props.title}</p>
         </DialogTitle>
         <DialogContent>
-        <div className="col content">
+        <div className={`col ${style.content}`}>
           <div>
               <span>{props.duration}</span><br/>
               <span>{props.location}</span>
               <br/>
               <br/>
           </div>
-          <p className="description">Description</p>
+          <p className={style.description}>Description</p>
           {props.description?
-           <ul>
+           <ul className={style.modalUl}>
              {props.description.map((desc,i)=><li key={i}>{desc}</li>)}
            </ul>
            :null}
-           {props.urls &&props.urls.length?<div className="row buttonsLink">
+           {props.urls &&props.urls.length?<div className={`row ${style.buttonsLink}`}>
                {props.urls.map((url,i)=><a href={url.src} target="_blank" key={i}><button className="btn btn-primary">{url.label}</button></a>)}
            </div>:null
           }

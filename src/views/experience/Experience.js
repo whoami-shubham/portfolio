@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import Modal from '../modal/Modal';
-import "./experience.css"
+import style from "../../../styles/Experience.module.css"
 import ContentLoader from "react-content-loader"
 
 const Loader = (props) => (
@@ -21,18 +21,18 @@ export default function Experience(props) {
     const {loading} = props;
     return loading?<Loader />:(
         <>
-        <div className="row exp-container" onClick={()=>setOpen(true)}>
+        <div className={`row ${style.expContainer}`} onClick={()=>setOpen(true)}>
             <div className="col">
                <div className="row">
                    <p>{props.duration}</p>
                </div>
-               <div className="col padding-left-0">
+               <div className={`col ${style.paddingLeft0}`}>
                    <span className="row paragraph">{props.title}</span>
                    <span className="row org">{props.org}</span>
                </div>
             </div>
             <div>
-               <img src={props.imgUrl} alt={props.org} className="exp-img"/>
+               <img src={props.imgUrl} alt={props.org} className={style.expImg}/>
             </div>
         </div>
         <Modal {...props} onClose={()=>setOpen(false)} open={open} />

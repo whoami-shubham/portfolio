@@ -1,15 +1,17 @@
-import React, { useState,useContext } from "react";
-import { withRouter } from "react-router";
-import Navbar from "../navbar/Navbar";
-import resume from "../../assets/shubham_jha_resume.pdf";
+import React, { useState} from "react";
+import { useRouter } from 'next/router'
+import Navbar from "../src/views/navbar/Navbar";
+// import resume from "../assets/shubham_jha_resume.pdf";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
-import "./resume.css"
+import style from "../styles/Resume.module.css"
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 const RESUME_URL = "https://drive.google.com/file/d/14PvyvmmcGn8K1NP_t0dHVpwtt1q2O96n/view?usp=sharing"
+
 function Resume(props) {
   const [numPages, setNumPages] = useState(null);
-
+  const router = useRouter()
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
@@ -17,11 +19,11 @@ function Resume(props) {
   return (
     <div>
       <Navbar scroll={() => {
-        props.history.push("/");
+        router.push("/");
       }} curTab="2" />
       <center>
-      <button className="btn download-btn" onClick={()=>window.location.href = RESUME_URL}>download</button>
-      <Document file={resume} onLoadSuccess={onDocumentLoadSuccess} className="resume-container" >
+      <button className={`btn ${style.downloadBtn}`} onClick={()=>window.location.href = RESUME_URL}>download</button>
+      <Document file={RESUME_URL} onLoadSuccess={onDocumentLoadSuccess} className={style.resumeContainer} >
         {
               Array.from(
                 new Array(numPages),
@@ -38,4 +40,4 @@ function Resume(props) {
     </div>
   );
 }
-export default withRouter(Resume);
+export default Resume;

@@ -1,14 +1,14 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader'
-import { withRouter } from "react-router";
+import Image from 'next/image'
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 import Items from '../item/Items';
 import Articles from '../article/Articles';
 import Projects from '../project/Projects';
-import gmail from '../../assets/gmail.ico';
+import gmail from '../../../assets/gmail.ico';
 import Experience from '../experience/Experience';
-import "./home.css"
+import style from "../../../styles/Home.module.css"
 
 const AvatarWithText = props => (
   <ContentLoader viewBox="0 0 400 160" height={160} width={400} {...props}>
@@ -56,17 +56,17 @@ function Home(props) {
                             <a href="https://www.quora.com/profile/Shubham-Jha-171" target="_blank" className="fa fa-quora"></a>&nbsp;&nbsp;
                             <a href="https://twitter.com/whoami_shubham" target="_blank" className="fa fa-twitter"></a>&nbsp;&nbsp;
                             <a href="https://www.facebook.com/whoami.shubham" target="_blank" className="fa fa-facebook"></a>
-                            <a href="mailto:shubhamkumarjha0013@gmail.com" target="_blank" className="fa fa-gmail"><img src={gmail}  className="gmail" /></a>
+                            <a href="mailto:shubhamkumarjha0013@gmail.com" target="_blank" className="fa fa-gmail"><Image src={gmail}  className="gmail" alt="gmail" /></a>
                           </span>
                           <br/><br/>
-                          <button className="message" onClick={()=>window.location.href="https://bit.ly/3oiipc9"}><i className="fa fa-whatsapp"></i> Message</button>
+                          <button className={style.message} onClick={()=>window.location.href="https://bit.ly/3oiipc9"}><i className="fa fa-whatsapp"></i> Message</button>
                      </figcaption>
                    </center>
                 </div>
           </div>
           <div className="container my-5">
               <span className="name items_margin heading">Work Experience</span>
-               <div className="row experiences">
+               <div className={`row ${style.experiences}`}>
                   {experiences}
                </div>
                <span className="name items_margin heading">Education</span>
@@ -84,4 +84,4 @@ function Home(props) {
     </div>
     )
 }
-export default withRouter(Home);
+export default Home;

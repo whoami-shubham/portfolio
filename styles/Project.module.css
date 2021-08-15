@@ -1,7 +1,7 @@
-ul {
+.projectUl{
   list-style: none;
 }
-.img_item {
+.imgItem {
   border-radius: 50%;
   max-width: 100px;
   border: 1px solid #ddd;
@@ -21,9 +21,6 @@ ul {
 .npm:hover,
 .react:hover {
   color: white;
-}
-.devicon-npm-original-wordmark {
-  font-size: 30;
 }
 .npm {
   background-color: #cb3837;

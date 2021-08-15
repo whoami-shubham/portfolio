@@ -1,10 +1,10 @@
 import React, {useState,useEffect,useContext } from "react";
-import { withRouter } from "react-router";
+import { useRouter } from 'next/router'
 import scrollContext from "../contexts/ScrollContext";
 
 function Navbar(props) {
-  
-  const [curNav,setcurNav] = useContext(scrollContext);
+  const router = useRouter() 
+ const [curNav,setcurNav] = useContext(scrollContext);
  console.log(curNav)
   function scroll(id){
     switch (id) {
@@ -32,11 +32,11 @@ function Navbar(props) {
 
   const clickHandler = (id, href) => {
     if(id!=="2" && curNav==="2"){
-      props.history.push("/");
+      router.push("/");
     }
     setcurNav(id);
     if (href) {
-      setTimeout(()=>props.history.push(href),0);
+      setTimeout(()=>router.push(href),0);
     }
   };
 
@@ -100,4 +100,4 @@ function Navbar(props) {
     </div>
   );
 }
-export default withRouter(Navbar);
+export default Navbar;

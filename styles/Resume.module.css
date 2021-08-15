@@ -1,0 +1,14 @@
+.resumeContainer {
+    padding-top: 130px;
+    margin-bottom: -185px;
+  }
+  .downloadBtn {
+    background: #1976d2;
+    color: white;
+    position: absolute;
+    top: 80px;
+  }
+  .downloadBtn:hover {
+    color: white;
+  }
+  

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import hackerrank from '../../assets/hackerrank.png'
-import hackerearth from '../../assets/hackerearth.png'
-import interviewbit from '../../assets/interviewbit.png'
-import leetcode from '../../assets/leetcode.png'
-import codechef from '../../assets/codechef.png'
+import hackerrank from '../../../assets/hackerrank.png'
+import hackerearth from '../../../assets/hackerearth.png'
+import interviewbit from '../../../assets/interviewbit.png'
+import leetcode from '../../../assets/leetcode.png'
+import codechef from '../../../assets/codechef.png'
 
 export default class Footer extends Component {
   render() {
