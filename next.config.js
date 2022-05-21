@@ -9,6 +9,6 @@ module.exports = withPWA({
   reactStrictMode: true,
   images: {
     loader: 'imgix',
-    path: '/',
+    path: '/portfolio',
   },
 })
