@@ -18,15 +18,15 @@ jobs:
     - name: Build App
       run: yarn build
 
-#     - name: Deploy to GitHub Pages
-#     - uses: Cecilapp/GitHub-Pages-deploy@v3
-#       env:
-#         GITHUB_TOKEN: ${{ secrets.TOKEN }}
-#       with:
-#         email: username@domain.tld
-#         build_dir: out               # optional
-#         branch: gh-pages                # optional
-#         jekyll: no                     # optional
+    - name: Deploy to GitHub Pages
+    - uses: Cecilapp/GitHub-Pages-deploy@v3
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      with:
+        email: shubhamkumarjha0013@gmail.com
+        build_dir: out               # optional
+        branch: gh-pages                # optional
+        jekyll: no                     # optional
         #commit_message: custom message # optional
         #cname: domain.tld              # optional
     
