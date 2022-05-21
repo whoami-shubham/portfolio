@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import gmail from "../../../assets/gmail.ico";
 import style from "../../../styles/Home.module.css";
 import { CtaProps } from "../types";
 
@@ -10,13 +9,13 @@ export default function Cta(props: CtaProps) {
     <div className="row">
       <div className="col-12 cover"></div>
       <div className="col-12">
-        <center>
+        <div className="center">
           <img
             className="rounded-circle profile"
             src={imgUrl}
             alt="loading.."
           />
-          <figcaption>
+          <figcaption className="center">
             <span className="name">{name}</span>
             <span className="position">{bio}</span>
             <span>
@@ -36,10 +35,16 @@ export default function Cta(props: CtaProps) {
                 ></a>
               )}
               <a href={links?.gmail} target="_blank" className="fa fa-gmail">
-                <Image src={gmail} className="gmail" alt="gmail" />
+                <Image
+                  loader={() => "/assets/gmail.ico"}
+                  src={"/assets/gmail.ico"}
+                  className="gmail"
+                  alt="gmail"
+                  height={20}
+                  width={20}
+                />
               </a>
             </span>
-            <br />
             <br />
             <button
               className={style.message}
@@ -48,7 +53,7 @@ export default function Cta(props: CtaProps) {
               <i className="fa fa-whatsapp"></i> Message
             </button>
           </figcaption>
-        </center>
+        </div>
       </div>
     </div>
   );

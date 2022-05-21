@@ -1,6 +1,5 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
-import Image from "next/image";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import Educations from "../education/Educations";

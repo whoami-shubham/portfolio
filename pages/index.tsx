@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Home from "../src/views/home/Home";
 import { response } from "../src/data";

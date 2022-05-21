@@ -26,29 +26,27 @@ function Resume({ data }: { data: ApiResponse }) {
         }}
         curTab="2"
       />
-      <center>
-        <button
-          className={`btn ${style.downloadBtn}`}
-          onClick={() => (window.location.href = RESUME_URL)}
+      <button
+        className={`btn ${style.downloadBtn}`}
+        onClick={() => (window.location.href = RESUME_URL)}
+      >
+        download
+      </button>
+      <div className="resume-iframe">
+        <iframe
+          className={style.resumeContainer}
+          src={data?.resumeUrl}
+          scrolling="yes"
+          frameBorder="0"
+          marginHeight={0}
+          marginWidth={0}
+          height="800px"
+          width="100%"
+          allowFullScreen
         >
-          download
-        </button>
-        <div className="resume-iframe">
-          <iframe
-            className={style.resumeContainer}
-            src={data?.resumeUrl}
-            scrolling="yes"
-            frameBorder="0"
-            marginHeight={0}
-            marginWidth={0}
-            height="800px"
-            width="100%"
-            allowFullScreen
-          >
-            Google Document will show here..
-          </iframe>
-        </div>
-      </center>
+          Google Document will show here..
+        </iframe>
+      </div>
     </div>
   );
 }

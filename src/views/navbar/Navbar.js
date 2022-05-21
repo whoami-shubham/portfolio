@@ -5,7 +5,6 @@ import scrollContext from "../contexts/ScrollContext";
 function Navbar(props) {
   const router = useRouter() 
  const [curNav,setcurNav] = useContext(scrollContext);
- console.log(curNav)
   function scroll(id){
     switch (id) {
       case "0":
