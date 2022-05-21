@@ -36,8 +36,8 @@ export default function Cta(props: CtaProps) {
               )}
               <a href={links?.gmail} target="_blank" className="fa fa-gmail">
                 <Image
-                  loader={() => "/assets/gmail.ico"}
-                  src={"/assets/gmail.ico"}
+                  loader={() => "/portfolio/assets/gmail.ico"}
+                  src={"/portfolio/assets/gmail.ico"}
                   className="gmail"
                   alt="gmail"
                   height={20}
