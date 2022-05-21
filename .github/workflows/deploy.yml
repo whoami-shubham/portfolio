@@ -18,7 +18,6 @@ jobs:
     - name: Build App
       run: yarn build
       
-    - name: Deploy
     - uses: Cecilapp/GitHub-Pages-deploy@v3
       
 
