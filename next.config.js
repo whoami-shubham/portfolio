@@ -1,6 +1,7 @@
 const withPWA = require("next-pwa");
 
 module.exports = withPWA({
+  basePath: '/portfolio',
   pwa: {
     dest: "public",
     register: true,
@@ -9,6 +10,6 @@ module.exports = withPWA({
   reactStrictMode: true,
   images: {
     loader: 'imgix',
-    path: '/portfolio',
+    path: '/',
   },
 })
