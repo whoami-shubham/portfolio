@@ -44,7 +44,7 @@ function Navbar(props) {
     <div className="header">
       <nav className="navbar navbar-expand-lg navbar-light">
         <a className="navbar-brand" href="/" onClick={()=>clickHandler("")}>
-          Shubham
+          /
         </a>
         <button
           className="navbar-toggler"
@@ -86,14 +86,14 @@ function Navbar(props) {
                 Resume
               </span>
             </li>
-            <li
+            {/* <li
               className={`nav-item ${curNav === "3" ? "active" : ""}`}
               //onClick={() => clickHandler("2", "resume")}
             >
               <span className="nav-link">
                 About
               </span>
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>
