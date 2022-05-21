@@ -11,11 +11,11 @@ a {
 
 @font-face {
   font-family: "google-font"; /*a name to be used later*/
-  src: url("/assets/google-font.woff2"); /*URL to font*/
+  src: url("/portfolio/assets/google-font.woff2"); /*URL to font*/
 }
 @font-face {
   font-family: "Inter"; /*a name to be used later*/
-  src: url("/assets/Inter-Bold.ttf"); /*URL to font*/
+  src: url("/portfolio/assets/Inter-Bold.ttf"); /*URL to font*/
 }
 body {
   font-family: "google-font", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
@@ -194,7 +194,7 @@ img {
   text-decoration: none !important;
 }
 .cover {
-  background-image: url("/assets/banner2.jpg");
+  background-image: url("/portfolio/assets/banner2.jpg");
   min-height: 390px;
   background-size: cover;
   background-repeat: no-repeat;
