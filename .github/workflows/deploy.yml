@@ -5,7 +5,7 @@ on:
     branches: [ nextjs ]
 
 jobs:
-  build-and-deploy:
+  build:
 
     runs-on: ubuntu-latest
     
@@ -20,13 +20,13 @@ jobs:
 
     - name: Deploy to GitHub Pages
     - uses: Cecilapp/GitHub-Pages-deploy@v3
-      env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-      with:
-        email: shubhamkumarjha0013@gmail.com
-        build_dir: out               # optional
-        branch: gh-pages                # optional
-        jekyll: no                     # optional
-        #commit_message: custom message # optional
-        #cname: domain.tld              # optional
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.TOKEN }}
+#       with:
+#         email: shubhamkumarjha0013@gmail.com
+#         build_dir: out               # optional
+#         branch: gh-pages                # optional
+#         jekyll: no                     # optional
+#         #commit_message: custom message # optional
+#         #cname: domain.tld              # optional
     
