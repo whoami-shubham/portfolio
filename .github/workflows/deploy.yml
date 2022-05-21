@@ -24,6 +24,6 @@ jobs:
       - name: 'Build and deploy'
         uses: tsg-iitkgp/next-build-export-action@v1.1
         env:
-          BUILD_DIR: .
+          BUILD_DIR: out
           PAGES_BRANCH: gh-pages
           TOKEN: ${{ secrets.TOKEN }}
