@@ -1,7 +1,8 @@
 const withPWA = require("next-pwa");
 
 module.exports = withPWA({
-  basePath: '/portfolio',
+  basePath:"/portfolio",
+  assetsPrefix:"/portfolio",
   pwa: {
     dest: "public",
     register: true,
