@@ -7,4 +7,8 @@ module.exports = withPWA({
     skipWaiting: true,
   },
   reactStrictMode: true,
+  images: {
+    loader: 'imgix',
+    path: '/',
+  },
 })
